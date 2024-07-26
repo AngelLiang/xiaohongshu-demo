@@ -2,11 +2,26 @@
 <html>
 
 <head>
+  <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
   <title>小红书文案生成器</title>
 </head>
 
 <body>
   <h1>小红书文案生成器</h1>
+
+  <div class="content">
+    <section class="left">
+      <div class="tip">一键生成小红书文案</div>
+      <textarea class="input" name="input" id="input" placeholder="请输入关键词"></textarea>
+      <div class="generate" id="generate">生成文案</div>
+    </section>
+    <section class="right">
+      <div class="tip">生成结果</div>
+      <div class="output" id="output"></div>
+      <div class="save">
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>
