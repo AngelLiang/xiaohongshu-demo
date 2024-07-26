@@ -1,22 +1,27 @@
 document.getElementById("generate").onclick = function () {
     const input = document.getElementById("input").value;
+    const isStream = document.getElementById("isStream").checked;  // 获取复选框的状态
+
     if (!input) {
         return alert('请输入内容');
     }
-    cleanOutput()
-    fetchData(input, (data) => {
+
+    cleanOutput();
+
+    fetchData(input, isStream, (data) => {  // 将复选框的状态作为参数传给fetchData函数
         // 回调时执行以下代码
         document.getElementById('output').innerHTML += data;
     });
 }
 
-const fetchData = async function (input, callback) {
+
+const fetchData = async function (input, isStream, callback) {
     const response = await fetch('/api/generate', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt: input })
+        body: JSON.stringify({ prompt: input, stream: isStream })
     })
 
     const reader = response.body.getReader();

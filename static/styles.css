@@ -69,3 +69,11 @@ h1 {
     color: #000;
     overflow: scroll;
 }
+
+.checkbox-container {
+    text-align: right;
+}
+
+#isStream {
+    margin-bottom: 10px;
+}
