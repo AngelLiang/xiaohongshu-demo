@@ -4,10 +4,11 @@
 
 体验地址：
 
-- vercel: https://xiaohongshu-demo.vercel.app/
-- render: https://xiaohongshu-demo.onrender.com/
+- vercel: https://xiaohongshu-demo.vercel.app
+- render: https://xiaohongshu-demo.onrender.com
+- zeabur: https://xiaohongshu-demo.zeabur.app
 
-vercel由于一些原因，暂时无法正常获取大模型的响应。render可以正常使用。
+vercel由于一些原因，暂时无法正常获取大模型的响应。render和zeabur可以正常使用。
 
 ## 开发环境和依赖
 
