@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>小红书文案生成器</title>
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <link href="/static/styles.css" rel="stylesheet">
-  <title>小红书文案生成器</title>
-</head>
+  <body>
+    <h1>小红书文案生成器</h1>
 
-<body>
-  <h1>小红书文案生成器</h1>
-
-  <div class="content">
-    <section class="left">
-      <div class="tip">一键生成小红书文案</div>
-      <textarea class="input" name="input" id="input" placeholder="请输入关键词"></textarea>
-      <div class="checkbox-container">
-        <input type="checkbox" id="isStream" name="isStream">
-        <label for="isStream">流式响应</label>
-      </div>
-      <div class="generate" id="generate">生成文案</div>
-    </section>
-    <section class="right">
-      <div class="tip">生成结果</div>
-      <div class="output" id="output"></div>
-      <div class="save">
-      </div>
-    </section>
-  </div>
-  <script src="static/index.js"></script>
-</body>
-
+    <div class="content">
+      <section class="left">
+        <div class="tip">一键生成小红书文案</div>
+        <textarea class="input" name="input" id="input" placeholder="请输入关键词"></textarea>
+        <div class="checkbox-container">
+          <input type="checkbox" id="isStream" name="isStream" />
+          <label for="isStream">流式响应</label>
+        </div>
+        <div class="generate" id="generate">生成文案</div>
+      </section>
+      <section class="right">
+        <div class="tip">生成结果</div>
+        <div class="output" id="output"></div>
+        <div class="save"></div>
+      </section>
+    </div>
+    <script src="static/index.js"></script>
+  </body>
 </html>

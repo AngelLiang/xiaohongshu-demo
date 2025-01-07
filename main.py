@@ -9,9 +9,9 @@ from services import ChatClient
 from dotenv import load_dotenv
 load_dotenv()
 
-SPARK_APPID = os.getenv('SPARK_APPID', None)
-SPARK_APISECRET = os.getenv('SPARK_APISECRET', None)
-SPARK_APIKEY = os.getenv('SPARK_APIKEY', None)
+OPENAI_BASE_URL = os.getenv('OPENAI_BASE_URL', '')
+OPENAI_APIKEY = os.getenv('OPENAI_APIKEY', '')
+OPENAI_MODEL = os.getenv('OPENAI_MODEL', '')
 
 app = FastAPI()
 
@@ -30,15 +30,15 @@ class GenerateIn(BaseModel):
 
 
 @app.post('/api/generate')
-async def generate(payload: GenerateIn):
+def generate(payload: GenerateIn):
     prompt = payload.prompt
     is_stream = payload.stream
+    chat_client = ChatClient(OPENAI_BASE_URL, OPENAI_APIKEY, OPENAI_MODEL)
     if is_stream:
-        generator = ChatClient(
-            SPARK_APIKEY, SPARK_APISECRET).generate_stream(prompt)
+        generator = chat_client.generate_stream(prompt)
         return StreamingResponse(generator)
     else:
-        response = ChatClient(SPARK_APIKEY, SPARK_APISECRET).generate(prompt)
+        response = chat_client.generate(prompt)
         return Response(response)
 
 
