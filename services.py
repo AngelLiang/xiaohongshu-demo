@@ -11,7 +11,6 @@ class ChatClient:
             api_key=self.apikey,
             base_url=self.base_url
         )
-        print(self.client.base_url, self.model)
 
     def generate_stream(self, content: str) -> Generator:
         completion = self.client.chat.completions.create(
